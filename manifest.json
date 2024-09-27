@@ -1,0 +1,42 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 3,
+  "name": "ClearCUT",
+  "version": "1.0",
+  "description": "Press Ctrl+M to show or hide YouTube controls.",
+  "icons": { 
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "32": "img/icon32.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+    }
+  },
+  "commands": {
+    "hide": {
+      "suggested_key": {
+        "default": "Ctrl+M"
+      },
+      "description": "Hide/show YouTube controls"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/watch?*"],
+      "js": ["src/hide.js", "src/show.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ]
+}
