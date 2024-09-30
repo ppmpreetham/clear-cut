@@ -3,7 +3,7 @@
   "manifest_version": 3,
   "name": "ClearCUT",
   "version": "1.0",
-  "description": "Press Ctrl+M to show or hide YouTube controls.",
+  "description": "Press Ctrl+M to show or hide the YouTube controls.",
   "icons": { 
     "16": "img/icon16.png",
     "32": "img/icon32.png",
